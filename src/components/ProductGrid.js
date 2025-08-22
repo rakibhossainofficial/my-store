@@ -9,7 +9,7 @@ export default function ProductGrid() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/product-limit");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/product-limit`);
         const data = await res.json();
 
         setProducts(data.data || []); // adjust if API shape differs
